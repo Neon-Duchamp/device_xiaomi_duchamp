@@ -120,6 +120,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/camerax-vendor-extensions.xml
 
+# Dexpreopt
+WITH_DEXPREOPT_DEBUG_INFO := false
+
 # Debloat
 PRODUCT_PACKAGES += \
     debloat
