@@ -188,6 +188,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
    FrameworksResOverlayDuchamp \
    PowerOffAlarmOverlayDuchamp \
+   OpenDeltaOverlayDuchamp \
    SettingsProviderOverlayDuchampPOCO \
    SettingsProviderOverlayDuchampRedmi \
    SettingsResOverlayDuchamp \
