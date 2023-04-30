@@ -124,3 +124,13 @@ service vendor.hwcomposer-3-2 /vendor/bin/hw/android.hardware.graphics.composer@
     capabilities SYS_NICE
     onrestart restart surfaceflinger
     task_profiles ProcessCapacityHigh HighPerformance
+
+service vendor.gralloc-4-0 /vendor/bin/hw/mt6897/android.hardware.graphics.allocator-V2-service-mediatek.mt6897
+    class hal animation
+    interface android.hardware.graphics.allocator@4.0::IAllocator default
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles ProcessCapacityHigh HighPerformance
+    override
