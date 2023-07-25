@@ -311,7 +311,8 @@ include $(DEVICE_PATH)/vendor_logtag.mk
 
 # Shim
 PRODUCT_PACKAGES += \
-    libbase_shim
+    libbase_shim \
+    libshim_sink
 
 # SKU
 PRODUCT_COPY_FILES += \
