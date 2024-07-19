@@ -102,6 +102,9 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6897
 # Miui Camera
 CAMERA_PACKAGE_NAME := com.android.camera
 
+# Memory Allocator
+MALLOC_LOW_MEMORY := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
