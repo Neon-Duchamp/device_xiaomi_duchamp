@@ -3,3 +3,5 @@ allow mtk_hal_power vendor_power_prop:file { open read map watch watch_reads get
 allow mtk_hal_power sysfs_therm:file w_file_perms;
 r_dir_file(mtk_hal_power, thermal_core_data_file)
 binder_call(mtk_hal_power, hal_power_default)
+
+get_prop(mtk_hal_power, vendor_thermal_prop)
