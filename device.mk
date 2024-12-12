@@ -312,6 +312,10 @@ PRODUCT_PACKAGES += \
 # Properties
 include $(DEVICE_PATH)/vendor_logtag.mk
 
+# Sound
+PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer
+
 # SKU
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/sku/,$(TARGET_COPY_OUT_ODM)/etc)
