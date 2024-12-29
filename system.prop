@@ -1,2 +1,5 @@
 # CameraX
 ro.camerax.extensions.enabled=true
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
