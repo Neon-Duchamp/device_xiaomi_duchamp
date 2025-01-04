@@ -6,6 +6,10 @@ allow system_app sysfs_battery_supply:file { getattr open read write };
 allow system_app vendor_sysfs_corecontrol:dir search;
 allow system_app vendor_sysfs_corecontrol:file { getattr open read write };
 
+# HTSR
+allow system_app sysfs_htsr:file { read write open setattr getattr };
+allow system_app sysfs_htsr:dir { search open read };
+
 # Turbo Charge
 allow system_app sysfs_power_supply:file { write setattr };
 allow system_app sysfs_power_supply:file rw_file_perms;

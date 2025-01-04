@@ -24,6 +24,8 @@ import com.xiaomi.settings.turbocharging.TurboChargingService;
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
     private static final boolean DEBUG = true;
+    private static final String HTSR_ENABLE_KEY = "htsr_enable";
+    private static final String HTSR_FILE = "/sys/devices/platform/goodix_ts.0/switch_report_rate";
 
     @Override
     public void onReceive(final Context context, Intent intent) {

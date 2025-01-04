@@ -1054,6 +1054,6 @@ on property:persist.sys.parts.cpu.prime.governor=*
 on property:sys.boot_completed=1
     stop statsd
 
-# Disable Rotation
-on property:sys.boot_completed=1
-    exec -- /system/bin/sh -c "settings put secure show_rotation_suggestions 0"
+# Allow system to modify High Touch Sampling Rate
+    chown system system /sys/devices/platform/goodix_ts.0/switch_report_rate
+    chmod 0660 /sys/devices/platform/goodix_ts.0/switch_report_rate

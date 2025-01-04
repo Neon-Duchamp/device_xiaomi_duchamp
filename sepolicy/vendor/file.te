@@ -24,6 +24,9 @@ type vendor_persist_display_file, file_type;
 # Fingerprint
 type vendor_fingerprint_sysfs, sysfs_type, fs_type;
 
+# HTSR
+type sysfs_htsr, sysfs_type, fs_type;
+
 # Power
 type vendor_touchfeature_device, dev_type;
 
