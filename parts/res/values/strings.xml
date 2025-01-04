@@ -106,4 +106,10 @@
     <string name="core_6">Core 6 (Big)</string>
     <string name="core_7">Core 7 (Big)</string>
 
+    <!-- High Touch Polling -->
+    <string name="htsr_title">Touch Responsiveness</string>
+    <string name="htsr_enable_title">Increase Touch Responsiveness</string>
+    <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
+    <string name="htsr_enable_summary_not_supported">Increase Touch Responsiveness is currently not supported by the kernel</string>
+
 </resources>
