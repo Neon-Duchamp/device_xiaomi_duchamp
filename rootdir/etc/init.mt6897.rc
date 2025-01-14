@@ -952,3 +952,7 @@ on property:persist.sys.duchamp.dt2w=*
     chmod 0660 /sys/devices/system/cpu/cpu5/online
     chmod 0660 /sys/devices/system/cpu/cpu6/online
     chmod 0660 /sys/devices/system/cpu/cpu7/online
+
+# Stop statsd
+on property:sys.boot_completed=1
+    stop statsd
