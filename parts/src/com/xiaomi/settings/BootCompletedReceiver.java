@@ -15,7 +15,11 @@ import android.os.UserHandle;
 import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
+import android.content.IntentFilter;
+import android.os.UserHandle;
 import com.xiaomi.settings.display.ColorModeService;
+import com.xiaomi.settings.touchsampling.TouchSamplingUtils;
+import com.xiaomi.settings.touchsampling.TouchSamplingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -41,6 +45,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Display
         context.startServiceAsUser(new Intent(context, ColorModeService.class),
                 UserHandle.CURRENT);
+
+       // Start Touch Sampling Service
+        context.startServiceAsUser(new Intent(context, TouchSamplingService.class), UserHandle.CURRENT);
 
        private void overrideHdrTypes(Context context) {
         try {
