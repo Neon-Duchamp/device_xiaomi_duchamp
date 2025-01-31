@@ -12,9 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
 # Keys
 -include vendor/lineage-priv/keys/keys.mk
 
@@ -122,6 +119,15 @@ PRODUCT_PACKAGES += \
 # CameraExtensions
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/camerax-vendor-extensions.xml
+
+# Dalvik Configs
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.heapstartsize=24m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.46 \
+    dalvik.vm.heapminfree=8m \
+    dalvik.vm.heapmaxfree=48m
 
 # Display
 PRODUCT_PACKAGES += \
