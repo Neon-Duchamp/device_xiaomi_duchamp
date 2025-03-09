@@ -107,10 +107,13 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lock')
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
-        .clear_symbol_version('AHardwareBuffer_unlock'),
+        .clear_symbol_version('AHardwareBuffer_unlock')
+        .add_needed('libbase_shim.so'),
 
     'vendor/lib64/mt6897/libmtkcam_hwnode.jpegnode.so': blob_fixup()
         .add_needed('libultrahdr_shim.so'),
+    ('vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so'): blob_fixup()
+        .add_needed('libbase_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
