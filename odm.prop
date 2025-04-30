@@ -1,3 +1,6 @@
+# CameraX
+ro.camerax.extensions.enabled=true
+
 # Display Feature
 persist.vendor.dc_backlight.enable=false
 ro.vendor.cabc.enable=false
