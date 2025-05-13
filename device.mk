@@ -15,11 +15,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Keys
 -include vendor/lineage-priv/keys/keys.mk
 
-# JamesDSP
-$(call inherit-product-if-exists, vendor/jdsp/config.mk)
-
 # IMS
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
+
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
