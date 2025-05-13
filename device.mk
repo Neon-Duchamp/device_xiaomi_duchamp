@@ -18,6 +18,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # IMS
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
 
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 # A/B
 ifneq ($(WITH_GMS),true)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
