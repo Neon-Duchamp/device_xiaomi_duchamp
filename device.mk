@@ -111,6 +111,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl
 
+# Codec
+PRODUCT_PACKAGES += \
+    libstagefright_foundation-v33
+
 # ConsumerIr
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example

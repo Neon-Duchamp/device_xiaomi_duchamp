@@ -21,6 +21,7 @@ namespace_imports = [
     'device/xiaomi/duchamp',
     'hardware/mediatek',
     'hardware/xiaomi',
+    'hardware/dolby',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -36,6 +37,20 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/hw/vendor.dolby.media.c2@1.0-service': blob_fixup()
+        .add_needed('libshim_codec2_hidl.so')
+        .add_needed('libstagefright_foundation-v33.so'),
+    ('vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service',
+     'vendor/lib64/hw/audio.primary.mt6897.so'): blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so'),
+    ('vendor/lib64/soundfx/libdlbvol.so',
+     'vendor/lib64/soundfx/libswspatializer.so',
+     'vendor/lib64/libcodec2_soft_ac4dec.so',
+     'vendor/lib64/libcodec2_soft_ddpdec.so',
+     'vendor/lib64/libswspatializer_ext.so'): blob_fixup()
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    'vendor/bin/hw/audio.primary.mediatek.so': blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so'),
     'vendor/bin/mi_thermald': blob_fixup()
         .binary_regex_replace(b'%d/on', b'%d/..'),
     'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl': blob_fixup()
