@@ -19,6 +19,7 @@
 
     <application
         android:label="@string/device_settings_app_name"
+        android:icon="@drawable/ic_xiaomiparts"
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
