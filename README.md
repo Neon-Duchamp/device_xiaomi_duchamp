@@ -27,4 +27,4 @@ Rear Camera 3 | 2 MP, f/2.4, (macro)
 Front Camera | 16 MP, f/2.4, (wide), 1/3.06", 1.0µm
 
 ## Device picture
-![Poco X6 Pro 5G](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-poco-x6-pro-2.jpg "Poco X6 Pro in black, yellow and grey")
+![Poco X6 Pro 5G](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-poco-x6-pro-09.jpg "Poco X6 Pro in black, yellow and grey")
