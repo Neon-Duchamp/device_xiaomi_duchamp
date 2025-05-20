@@ -270,4 +270,5 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.libsensor-parseRGB=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.libsensor-ssccalapi=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.trm_lib=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.wpfa_iptable_android=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.wpfa_iptable_android=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL)
