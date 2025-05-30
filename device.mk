@@ -186,6 +186,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
    CarrierConfigOverlayDuchamp \
    FrameworksResOverlayDuchamp \
+   MiuiCameraOverlayIcon \
    PowerOffAlarmOverlayDuchamp \
    SettingsProviderOverlayDuchampPOCO \
    SettingsProviderOverlayDuchampRedmi \
