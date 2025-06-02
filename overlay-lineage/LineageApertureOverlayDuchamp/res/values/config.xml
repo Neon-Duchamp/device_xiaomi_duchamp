@@ -6,4 +6,49 @@
 <resources>
     <!-- Enable auxiliary cameras selector. -->
     <bool name="config_enableAuxCameras">true</bool>
+
+    <!-- List of ID of auxiliary cameras that must be ignored by the app.
+         IDs are typically Xiaomi's role IDs.
+         20: Often a depth sensor or other non-primary aux.
+         22: Macro camera (can be ignored if primary app experience doesn't need it).
+    -->
+    <string-array name="config_ignoredAuxCameraIds">
+        <item>20</item>
+        <!-- <item>22</item> --> <!-- Optional: Uncomment to ignore the Macro camera -->
+    </string-array>
+
+    <!-- An array of triplets made of (camera ID, qualities, framerates).
+         These video modes will be added to the available
+         quality/framerate combinations of a camera device.
+         Make sure the device is able to handle those configurations
+         and maintain a stable framerate at any condition.
+         Note that you can't add video qualities that aren't
+         exposed by the camera, only new framerates.
+         Valid values of resolution are:
+          - "sd" (480p)
+          - "hd" (720p)
+          - "fhd" (1080p)
+          - "uhd" (2160p)
+         Valid values of framerate are:
+          - "24"
+          - "30"
+          - "60"
+          - "120"
+
+        Camera ID Mappings from dump (Xiaomi Role ID -> Type):
+        - "0": Back Main Camera (HAL ID 0, API1 ID "0")
+        - "1": Front Camera (HAL ID 1, API1 ID "1")
+        - "21": Back Ultra-Wide Camera (HAL ID 2, maps to API1 ID "3" in dump)
+        - "22": Back Macro Camera (HAL ID 3, maps to API1 ID "2" in dump)
+    -->
+    <string-array name="config_additionalVideoConfigurations">
+        <!-- Back Main Camera (ID 0) -->
+        <item>0</item> <item>sd|hd|fhd</item> <item>60</item>
+        <!-- Front Camera (ID 1) -->
+        <item>1</item> <item>sd|hd|fhd</item> <item>60</item>
+        <!-- Back Ultra-Wide Camera (ID 21, from com.xiaomi.cameraid.role.cameraId) -->
+        <item>21</item> <item>sd|hd|fhd</item> <item>60</item>
+        <!-- Back Macro Camera (ID 22, from com.xiaomi.cameraid.role.cameraId) -->
+        <item>22</item> <item>sd|hd|fhd</item> <item>60</item>
+    </string-array>
 </resources>
