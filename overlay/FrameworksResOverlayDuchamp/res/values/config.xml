@@ -653,4 +653,8 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
+    <!-- TurboCharging -->
+    <bool name="config_hasTurboPowerCharger">true</bool>
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/bms/fastcharge_mode</string>
+
 </resources>
