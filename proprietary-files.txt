@@ -1392,7 +1392,7 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # Keymint
 vendor/bin/hw/android.hardware.identity-service.mitee@5.0
-vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee
+vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee;DISABLE_DEPS
 vendor/etc/init/android.hardware.identity@5.0-service.mitee.rc
 vendor/etc/init/android.hardware.security.keymint.mitee@3.0-service.rc
 vendor/etc/permissions/android.hardware.hardware_keystore.xml:vendor/etc/permissions/android.hardware.hardware_keystore.mitee.xml
@@ -1457,7 +1457,7 @@ vendor/etc/init/hw/init.mtkgki.rc
 odm/bin/mtd_mitee
 odm/etc/init/vendor.xiaomi.hardware.aidl.mtdservice-miteeservice.rc
 odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.aidl.mtdservice.xml
-odm/lib64/libmt_mitee.so
+odm/lib64/libmt_mitee.so;DISABLE_DEPS
 vendor/lib64/vendor.xiaomi.hardware.aidl.mtdservice-V1-ndk.so
 
 # Neural Networks
