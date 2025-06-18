@@ -25,3 +25,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=POCO/duchamp_global/duchamp:14/UP1A.230905.011/OS2.0.103.0.VNLMIXM:user/release-keys \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
 
+# Misc
+AXION_CAMERA_REAR_INFO := 64,8,2
+AXION_CAMERA_FRONT_INFO := 16
+AXION_PROCESSOR := Dimensity_8300_Ultra_(4nm)
+AXION_MAINTAINER := zenin1504
+AXION_DEBUGGING_ENABLED := true
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_VIPERFX := true
+
+# Gapps
+WITH_GMS := true
