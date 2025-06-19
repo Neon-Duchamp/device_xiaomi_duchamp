@@ -1,2 +1,7 @@
 # Camera
 ro.camerax.extensions.enabled=true
+
+# Gcam Go
+persist.vendor.camera.privapp.list=com.google.android.apps.cameralite
+ro.com.google.lens.oem_camera_package=com.google.android.apps.cameralite
+vendor.camera.aux.packagelist=com.google.android.apps.cameralite
