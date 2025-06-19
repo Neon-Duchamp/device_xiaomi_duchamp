@@ -931,3 +931,7 @@ on property:sys.boot_completed=1
 # Stop statsd
 on property:sys.boot_completed=1
     stop statsd
+
+# Disable Rotation
+on property:sys.boot_completed=1
+    exec -- /system/bin/sh -c "settings put secure show_rotation_suggestions 0"
