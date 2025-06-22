@@ -1,4 +1,4 @@
 cd external/wpa_supplicant_8
-git fetch https://github.com/xiaomi-mt6897-duchamp/android_external_wpa_supplicant_8
-git cherry-pick cc88629c6c5c2c2353bf87efef9b5c9c5bf32bee
+git fetch https://github.com/Neon-Duchamp/android_external_wpa_supplicant_8
+git cherry-pick 6cd84ef0cadada59a8715fe42acc56ec3f58c5c2
 cd ../../
