@@ -15,8 +15,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Keys
 -include vendor/lineage-priv/keys/keys.mk
 
-# V4A
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+# Google Camera Go
+$(call inherit-product-if-exists, vendor/go/config.mk)
 
 # JamesDSP
 $(call inherit-product-if-exists, vendor/jdsp/config.mk)
@@ -199,13 +199,6 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-# Miui Camera
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-miuicamera.xml
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/miuicamera-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/miuicamera-hiddenapi-package-allowlist.xml
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
@@ -241,7 +234,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
    FrameworksResOverlayDuchamp \
-   MiuiCameraOverlayIcon \
    PowerOffAlarmOverlayDuchamp \
    SettingsProviderOverlayDuchampPOCO \
    SettingsProviderOverlayDuchampRedmi \
@@ -323,7 +315,6 @@ include $(DEVICE_PATH)/vendor_logtag.mk
 # Shim
 PRODUCT_PACKAGES += \
     libbase_shim \
-    libshim_sink
 
 # SKU
 PRODUCT_COPY_FILES += \
