@@ -338,9 +338,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     xiaomi-telephony-stub
 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.engineermode.xml \
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6897 \
