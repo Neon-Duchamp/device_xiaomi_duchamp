@@ -29,3 +29,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=POCO/duchamp_global/duchamp:14/UP1A.230905.011/OS2.0.103.0.VNLMIXM:user/release-keys \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
 
+# Gms
+WITH_GMS := false

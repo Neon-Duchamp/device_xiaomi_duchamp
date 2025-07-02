@@ -15,9 +15,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Keys
 -include vendor/lineage-priv/keys/keys.mk
 
-# V4A
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
-
 # JamesDSP
 $(call inherit-product-if-exists, vendor/jdsp/config.mk)
 
