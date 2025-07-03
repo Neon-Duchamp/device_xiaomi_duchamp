@@ -24,7 +24,7 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
-import org.lineageos.settings.utils.FileUtils;
+import com.xiaomi.settings.utils.FileUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
