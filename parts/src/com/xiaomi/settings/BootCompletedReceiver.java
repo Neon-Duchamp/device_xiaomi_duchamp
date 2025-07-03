@@ -10,15 +10,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.display.DisplayManager;
-import android.os.IBinder;
 import android.os.UserHandle;
 import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
-import android.content.IntentFilter;
-import android.os.UserHandle;
+
 import com.xiaomi.settings.display.ColorModeService;
-import com.xiaomi.settings.touchsampling.TouchSamplingUtils;
 import com.xiaomi.settings.touchsampling.TouchSamplingService;
 import com.xiaomi.settings.turbocharging.TurboChargingService;
 
@@ -40,21 +37,28 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     }
 
     private static void onLockedBootCompleted(Context context) {
-            overrideHdrTypes(context);
-        }
+        overrideHdrTypes(context);
+    }
 
+    private static void onBootCompleted(Context context) {
         // Display
-        context.startServiceAsUser(new Intent(context, ColorModeService.class),
-                UserHandle.CURRENT);
+        context.startServiceAsUser(
+            new Intent(context, ColorModeService.class),
+            UserHandle.CURRENT
+        );
 
-       // Start Touch Sampling Service
-        context.startServiceAsUser(new Intent(context, TouchSamplingService.class), UserHandle.CURRENT);
+        // Start Touch Sampling Service
+        context.startServiceAsUser(
+            new Intent(context, TouchSamplingService.class),
+            UserHandle.CURRENT
+        );
 
-       // Start TurboChargingService
+        // Start TurboChargingService
         Intent turboChargingIntent = new Intent(context, TurboChargingService.class);
         context.startService(turboChargingIntent);
+    }
 
-       private void overrideHdrTypes(Context context) {
+    private static void overrideHdrTypes(Context context) {
         try {
             final DisplayManager dm = context.getSystemService(DisplayManager.class);
             if (dm != null) {
@@ -68,5 +72,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             }
         } catch (Exception e) {
             Log.e(TAG, "Error overriding HDR types", e);
+        }
     }
 }
