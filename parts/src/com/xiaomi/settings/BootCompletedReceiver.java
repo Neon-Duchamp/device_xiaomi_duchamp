@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
 import com.xiaomi.settings.display.ColorModeService;
+import com.xiaomi.settings.turbocharging.TurboChargingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -32,6 +33,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Display
         context.startServiceAsUser(new Intent(context, ColorModeService.class),
                 UserHandle.CURRENT);
+
+        // Start TurboChargingService
+        Intent turboChargingIntent = new Intent(context, TurboChargingService.class);
+        context.startService(turboChargingIntent);
 
         // Override HDR types to enable Dolby Vision
         final DisplayManager displayManager = context.getSystemService(DisplayManager.class);
