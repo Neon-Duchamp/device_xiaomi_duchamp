@@ -99,9 +99,6 @@ BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD) $(BO
 TARGET_KERNEL_CONFIG := duchamp
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6897
 
-# Miui Camera
-CAMERA_PACKAGE_NAME := com.android.camera
-
 # Memory Allocator
 MALLOC_LOW_MEMORY := true
 

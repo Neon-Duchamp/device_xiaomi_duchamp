@@ -30,9 +30,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     ('libmialgo_aio_seg',
      'libmialgo_utils',
-     'vendor.xiaomi.hw.touchfeature-V1-ndk',
-     'vendor.mediatek.hardware.camera.isphal@1.0',
-     'vendor.mediatek.hardware.camera.isphal-V1-ndk'): lib_fixup_vendor_suffix,
+     'vendor.xiaomi.hw.touchfeature-V1-ndk'): lib_fixup_vendor_suffix,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -94,12 +92,6 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/mt6897/libmtkcam_hwnode.jpegnode.so': blob_fixup()
         .add_needed('libultrahdr_shim.so'),
-    ('system_ext/lib64/libcamera_algoup_jni.xiaomi.so',
-     'system_ext/lib64/libcamera_mianode_jni.xiaomi.so',
-     'system_ext/lib64/libcamera_ispinterface_jni.xiaomi.so'): blob_fixup()
-        .add_needed('libgui_shim_miuicamera.so'),
-     'system_ext/priv-app/MiuiCamera/MiuiCamera.apk': blob_fixup()
-        .apktool_patch('blob-patches/'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
