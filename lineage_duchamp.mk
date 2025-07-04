@@ -30,4 +30,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
 
 # Gms
-WITH_GMS := false
+WITH_GMS := true
