@@ -28,11 +28,3 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=POCO/duchamp_global/duchamp:14/UP1A.230905.011/OS2.0.103.0.VNLMIXM:user/release-keys \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
-
-# Gms
-WITH_GMS := true
-
-# Misc
-TARGET_HAS_UDFPS := true
-TARGET_ENABLE_BLUR := true
-TARGET_DISABLE_MATLOG := true
