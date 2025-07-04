@@ -22,16 +22,12 @@ $(call inherit-product-if-exists, vendor/jdsp/config.mk)
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
 
 # A/B
-ifneq ($(WITH_GMS),true)
-    $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-    TARGET_RO_FILE_SYSTEM_TYPE := ext4
-else
-    $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
-    PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
-    TARGET_RO_FILE_SYSTEM_TYPE := erofs
-    PRODUCT_VIRTUAL_AB_COW_VERSION := 3
-    PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
-endif
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
+
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
+TARGET_RO_FILE_SYSTEM_TYPE := erofs
+PRODUCT_VIRTUAL_AB_COW_VERSION := 3
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
 
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
