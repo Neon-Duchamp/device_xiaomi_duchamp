@@ -197,8 +197,8 @@ vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service
 vendor/lib64/soundfx/libdlbvol.so
 vendor/lib64/soundfx/libswspatializer.so
-vendor/lib64/libcodec2_soft_ac4dec.so
-vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/libcodec2_soft_ac4dec.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_soft_ddpdec.so;DISABLE_CHECKELF
 
 # Batterysecret
 vendor/bin/batterysecret
