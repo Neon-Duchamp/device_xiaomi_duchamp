@@ -108,6 +108,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl
 
+# Core AOT
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := false
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
+
 # ConsumerIr
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
@@ -115,6 +120,21 @@ PRODUCT_PACKAGES += \
 # CameraExtensions
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/camerax-vendor-extensions.xml
+
+# Dex2oat
+PRODUCT_SYSTEM_PROPERTIES += \
+    pm.dexopt.boot-after-ota=speed \
+    pm.dexopt.ab-ota=speed \
+    pm.dexopt.post-boot=speed-profile \
+    pm.dexopt.bg-dexopt=speed-profile \
+    pm.dexopt.first-boot=speed \
+    pm.dexopt.install=speed-profile \
+    pm.dexopt.install-bulk=speed-profile \
+    pm.dexopt.shared=speed \
+    pm.dexopt.boot-after-mainline-update=speed \
+    pm.dexopt.cmdline=verify \
+    pm.dexopt.inactive=speed-profile \
+    dalvik.vm.enable_pr_dexopt=true
 
 # Dexpreopt
 WITH_DEXPREOPT_DEBUG_INFO := false
@@ -386,9 +406,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/xiaomi
-
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Thermal files
 PRODUCT_COPY_FILES += \
