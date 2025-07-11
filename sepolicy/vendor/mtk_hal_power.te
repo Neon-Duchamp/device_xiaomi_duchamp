@@ -1,0 +1,2 @@
+# Mtk Power
+allow mtk_hal_power vendor_power_prop:file { open read map watch watch_reads getattr };
