@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/camerax-vendor-extensions.xml
 
+# DT2W
+PRODUCT_PACKAGES += \
+    DT2W-Service-Duchamp
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.mediatek-mali
