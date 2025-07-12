@@ -263,11 +263,24 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level-2023-03-01.xml
 
 # Power
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.mtkpower@1.0.vendor \
+    vendor.mediatek.hardware.mtkpower@1.1.vendor \
+    vendor.mediatek.hardware.mtkpower@1.2.vendor \
+    android.hardware.power-service-mediatek \
+    android.hardware.power-V4-ndk.vendor \
+    android.hardware.power@1.2.vendor
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/perf/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
+# Performance
+PRODUCT_PACKAGES += \
+    libmtkperf_client \
+    libmtkperf_client_vendor
 
 # PowerOffAlarm
 PRODUCT_PACKAGES += \
@@ -338,6 +351,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/mediatek \
+    hardware/mediatek/libmtkperf_client \
     hardware/xiaomi
 
 # Thermal
