@@ -368,3 +368,4 @@ ro.vendor.wlan.gen=gen4m_6897
 
 # Zygote
 zygote.critical_window.minute=10
+ro.zygote.disable_gl_preload=1
