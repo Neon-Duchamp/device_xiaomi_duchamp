@@ -266,6 +266,10 @@ PRODUCT_PACKAGES += \
 # Properties
 include $(DEVICE_PATH)/vendor_logtag.mk
 
+# SOFOD
+PRODUCT_PACKAGES += \
+    SOFOD-Service-Duchamp
+
 # SKU
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/sku/,$(TARGET_COPY_OUT_ODM)/etc)
