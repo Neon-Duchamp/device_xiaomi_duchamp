@@ -952,10 +952,3 @@ on property:persist.sys.duchamp.dt2w=*
     chmod 0660 /sys/devices/system/cpu/cpu5/online
     chmod 0660 /sys/devices/system/cpu/cpu6/online
     chmod 0660 /sys/devices/system/cpu/cpu7/online
-
-# SOFOD
-    chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_fod
-    chown system system /sys/devices/platform/goodix_ts.0/goodix_ts_fod
-
-on property:persist.sys.duchamp.sofod=*
-    write /sys/devices/platform/goodix_ts.0/goodix_ts_fod ${persist.sys.duchamp.sofod}
