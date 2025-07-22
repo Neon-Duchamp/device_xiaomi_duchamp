@@ -956,3 +956,23 @@ on property:persist.sys.duchamp.dt2w=*
 # Stop statsd
 on property:sys.boot_completed=1
     stop statsd
+
+# Polling rate
+    chown system system /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate
+    chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate
+
+on property:debug.high_touch_rate=1
+    setprop persist.vendor.high_touch_rate 1
+    write /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate 1
+
+on property:debug.high_touch_rate=0
+    setprop persist.vendor.high_touch_rate 0
+    write /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate 0
+
+on property:vendor.post_boot.parsed=1
+    wait_for_prop persist.vendor.high_touch_rate 1
+    write /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate 1
+
+on property:vendor.post_boot.parsed=1
+    wait_for_prop persist.vendor.high_touch_rate 0
+    write /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate 0

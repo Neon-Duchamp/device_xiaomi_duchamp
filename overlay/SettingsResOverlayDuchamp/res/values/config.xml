@@ -6,6 +6,9 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Show high touch polling rate -->
+    <bool name="config_supportHighTouchRate">true</bool>
+
     <!-- Hide VRR toggle -->
     <bool name="config_disableVrrSetting">true</bool>
 
