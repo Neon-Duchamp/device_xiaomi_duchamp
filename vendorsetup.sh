@@ -35,3 +35,16 @@ echo "Clang environment configured."
   echo "Cloning fresh signing keys..."
   git clone https://github.com/Neon-Duchamp/keys.git -b yaap-keys vendor/yaap/signing/keys
 )
+
+# Apply microg new update by picking on 'sixteen' branch
+(
+  cd vendor/microg || exit
+
+  if ! git log --oneline | grep -q a216523a74f6b90f885420d389554678e1948715; then
+    echo "Applying microG patch from 'sixteen' branch..."
+    git fetch https://github.com/yaap/vendor_microg sixteen
+    git cherry-pick a216523a74f6b90f885420d389554678e1948715
+  else
+    echo "microG patch already applied."
+  fi
+)
